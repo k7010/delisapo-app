@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# user
+| column              | Type    | options                    |
+| ------------------- | ------- | -------------------------- |
+| staff_name          | string  | null: false                |
+| staff_number        | integer | null: false, unique: true  |
+| encrypted_password  | string  | null: false                |
+# association
+- has_many :baggages
+- has_many :deliveries
 
-Things you may want to cover:
 
-* Ruby version
+# baggage
+| column      | Type        | options                         |
+| ----------- | ----------- | ------------------------------- |
+| address_id  | integer     | null, false                     |
+| building    | string      |                                 |
+| block       | integer     | null, false                     |
+| family_name | string      | null, false                     |
+| first_name  | string      | null, false                     |
+| user        | references  | null, false, foreign_key: true  |
+# association
+- belongs_to :user
+- belongs_to :address
+- has_one :delivery
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# delivery
+| column        | Type        | options                         |
+| ------------- | ----------- | ------------------------------- |
+| user          | references  | null, false, foreign_key: true  |
+| baggage       | references  | null, false, foreign_key: true  |
+| complete_time | time        | null, false                     |
+# association
+- belongs_to :user
+- belongs_to :baggage
