@@ -21,6 +21,6 @@ class BaggagesController < ApplicationController
   private
 
   def baggage_params
-    params.require(baggage).permit(:address_id, :building, :block, :family_name, :first_name)
+    params.require(:baggage).permit(:address_id, :building, :block, :family_name, :first_name).merge(user_id: current_user.id)
   end
 end
