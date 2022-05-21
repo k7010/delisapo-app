@@ -4,12 +4,28 @@
     <title>DeliveryApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__bar row">
+        <h1 class="top_logo"><a href="/">TOPページへ</h1>
+        <% if user_signed_in? %>
+          <div class="user-logout">
+            <%= link_to current_user.staff_number, "#", class: "user-staff-number" %></li>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+          </div>
+        <% else %>
+          <div class="user-sign">
+            <%= link_to "ログイン", new_user_session_path, class: "login" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
+          </div>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
