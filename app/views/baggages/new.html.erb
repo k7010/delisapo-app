@@ -1,0 +1,8 @@
+<%= form_with model: @baggage, url:baggages_path, local: true do |f| %>
+  <%= f.collection_select(:address_id, Address.all, :id, :name, {}) %>
+  <%= f.text_area :text, placeholder:"ビル名" %>
+  <%= f.text_area :block, placeholder:"例）1-2-3" %>
+  <%= f.text_area :family_name ,placeholder:"苗字" %>
+  <%= f.text_area :first_name, placeholder:"名前" %>
+  <%= f.submit "登録する" %>
+<% end %>
