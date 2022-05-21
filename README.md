@@ -3,7 +3,6 @@
 # user
 | column              | Type    | options                    |
 | ------------------- | ------- | -------------------------- |
-| staff_name          | string  | null: false                |
 | staff_number        | integer | null: false, unique: true  |
 | encrypted_password  | string  | null: false                |
 # association
@@ -19,7 +18,7 @@
 | block       | integer     | null, false                     |
 | family_name | string      | null, false                     |
 | first_name  | string      | null, false                     |
-| user        | references  | null, false, foreign_key: true  |
+| user        | references  | null, false, foreign_key, true  |
 # association
 - belongs_to :user
 - belongs_to :address
