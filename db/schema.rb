@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2022_05_21_023228) do
 
   create_table "baggages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "address_id", null: false
     t.string "building"
-    t.integer "block", null: false
+    t.string "block", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.bigint "user_id", null: false
@@ -24,8 +23,6 @@ ActiveRecord::Schema.define(version: 2022_05_21_023228) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_baggages_on_user_id"
   end
-  
-ActiveRecord::Schema.define(version: 2022_05_20_215105) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,5 +38,4 @@ ActiveRecord::Schema.define(version: 2022_05_20_215105) do
   end
 
   add_foreign_key "baggages", "users"
-
 end

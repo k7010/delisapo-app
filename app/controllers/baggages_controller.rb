@@ -17,6 +17,10 @@ class BaggagesController < ApplicationController
     end
   end
 
+  def show
+    @baggage = Baggage.find(params[:id])
+  end
+
 
   private
 
