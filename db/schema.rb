@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_21_023228) do
+ActiveRecord::Schema.define(version: 2022_05_21_161641) do
 
   create_table "baggages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "address_id", null: false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2022_05_21_023228) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_baggages_on_user_id"
+  end
+
+  create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "baggage_id", null: false
+    t.string "delivery_result", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["baggage_id"], name: "index_deliveries_on_baggage_id"
+    t.index ["user_id"], name: "index_deliveries_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,4 +48,6 @@ ActiveRecord::Schema.define(version: 2022_05_21_023228) do
   end
 
   add_foreign_key "baggages", "users"
+  add_foreign_key "deliveries", "baggages"
+  add_foreign_key "deliveries", "users"
 end

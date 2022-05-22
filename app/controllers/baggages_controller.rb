@@ -19,6 +19,8 @@ class BaggagesController < ApplicationController
 
   def show
     @baggage = Baggage.find(params[:id])
+    @delivery = Delivery.new
+    @deliveries = @baggage.deliveries.includes(:user)
   end
 
 
