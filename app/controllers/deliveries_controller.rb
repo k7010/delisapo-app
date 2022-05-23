@@ -1,4 +1,7 @@
 class DeliveriesController < ApplicationController
+  def index
+    @deliveries = Delivery.all
+  end
 
   def create
     delivery = Delivery.create(delivery_params)

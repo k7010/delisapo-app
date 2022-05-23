@@ -21,6 +21,8 @@ class BaggagesController < ApplicationController
     @baggage = Baggage.find(params[:id])
     @delivery = Delivery.new
     @deliveries = @baggage.deliveries.includes(:user)
+    #配達済み荷物のidを取得
+    @result = Delivery.where(baggage_id: params[:id]).where(delivery_result: '配達済み').exists?
   end
 
 
