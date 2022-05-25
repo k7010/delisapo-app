@@ -1,7 +1,7 @@
 class BaggagesController < ApplicationController
 
   def index
-    @baggages = Baggage.all
+    @baggages = Baggage.includes(:user)
   end
 
   def new
@@ -25,10 +25,16 @@ class BaggagesController < ApplicationController
     @result = Delivery.where(baggage_id: params[:id]).where(delivery_result: '配達済み').exists?
   end
 
+  def search
+    @q = Baggage.ransack(params[:q])
+    @baggages = @q.result
+    
+  end
+
 
   private
 
   def baggage_params
-    params.require(:baggage).permit(:address_id, :building, :block, :family_name, :first_name).merge(user_id: current_user.id)
+    params.require(:baggage).permit(:address, :building, :block, :family_name, :first_name).merge(user_id: current_user.id)
   end
 end

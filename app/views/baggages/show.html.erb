@@ -1,30 +1,38 @@
 
-<%= @baggage.address.name %>
+<%= @baggage.address %>
 <%= @baggage.block %>
-<%= @baggage.building %>
+<%= @baggage.building %><br>
 <%= @baggage.family_name %>
 <%= @baggage.first_name %><br>
 
 
+
 <%#% 配達実績の入力 %>
 <% if @result == false %>
-
-
   <%= form_with(model: [@baggage, @delivery], local: true) do |form| %>
     <%= form.radio_button :delivery_result, '配達済み' %>
     <%= form.label :delivery_result, "完了", value: '配達済み' %>
     <%= form.radio_button :delivery_result, '不在' %>
     <%= form.label :delivery_result, "不在", value: '不在' %>
+    
     <%= form.submit "SEND" %>
-  <% end %>
+  <% end %><br><br>
 
-  <% @deliveries.each do |time| %>
-    <%= time.created_at.strftime("%H:%M") %>
-  <% end %>
-  
-<% else %> 
-  <p>配達済み</p>
+
+<%#= Time.now.strftime("%H:%M") %>
+
+
+<p>住所・氏名と類似する配達実績</p>
+<% Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
+            .where(address: @baggage.address).where(block: @baggage.block)
+            .where(family_name: @baggage.family_name).where(first_name: @baggage.first_name).each do |i| %>
+    <%= i.address %>
+    <%= i.block %><br>
+    <%= i.family_name %>
+    <%= i.first_name %>
+    <%= i.created_at.strftime("%H:%M") %>
+    <%= i.delivery_result %><br>
 <% end %>
-
-
-
+<% else %>
+<p>配達済み</p>
+<% end %>

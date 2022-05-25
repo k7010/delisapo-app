@@ -1,5 +1,5 @@
 <%= form_with model: @baggage, url:baggages_path, local: true do |f| %>
-  <%= f.collection_select(:address_id, Address.all, :id, :name, {}) %><br>
+  <%= f.text_area :address, placeholder:"住所" %><br>
   <%= f.text_area :block, placeholder:"例）1-2-3" %><br>
   <%= f.text_area :text, placeholder:"ビル名" %><br>
   <%= f.text_area :family_name ,placeholder:"苗字" %><br>

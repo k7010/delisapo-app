@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_05_21_161641) do
 
   create_table "baggages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "address_id", null: false
+    t.string "address", null: false
     t.string "building"
     t.string "block", null: false
     t.string "family_name", null: false
