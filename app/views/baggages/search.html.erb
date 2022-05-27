@@ -1,18 +1,27 @@
   <p>過去の配達実績</p>
-<% @baggages.each do |i| %>
+<% @baggages.each do |baggage| %>
 
-  <% Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
-               %>
-      <%= i.family_name %>
-      <%= i.first_name %>
+    <%= baggage.address %>
+    <%= baggage.block %>
+    <%= baggage.building %>
+    <%= baggage.family_name %>
+    <%= baggage.first_name %><br>
+    <% Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
+                .where(id: baggage.id).each do |i|%>
+                <%= i.created_at.strftime("%H:%M") %>
+      <% end %><br>
       <%#= i.delivery_result %>
-      <%= i.created_at.strftime("%H:%M") %><br>
+      <%#= i.created_at.strftime("%H:%M") %>
   
 <% end %>
 
 
 <h1>配達実績を調べる</h1>
   <%= search_form_for Baggage.ransack(params[:q]), url: search_baggages_path do |f| %>
+    <%= f.label :address_cont, '住所' %>
+    <%= f.text_field :address_cont, placeholder: '住所' %><br>
+    <%= f.label :block_cont, '番地' %>
+    <%= f.text_field :block_cont, placeholder: '番地' %><br>
     <%= f.label :family_name_cont, '苗字' %>
     <%= f.text_field :family_name_cont, placeholder: '苗字' %><br>
     <%= f.label :first_name_cont, '名前' %>

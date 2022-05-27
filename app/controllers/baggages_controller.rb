@@ -28,7 +28,6 @@ class BaggagesController < ApplicationController
   def search
     @q = Baggage.ransack(params[:q])
     @baggages = @q.result
-    
   end
 
 
