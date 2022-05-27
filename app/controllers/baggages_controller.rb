@@ -2,6 +2,7 @@ class BaggagesController < ApplicationController
 
   def index
     @baggages = Baggage.includes(:user)
+    @results = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
   end
 
   def new
@@ -23,11 +24,15 @@ class BaggagesController < ApplicationController
     @deliveries = @baggage.deliveries.includes(:user)
     #配達済み荷物のidを取得
     @result = Delivery.where(baggage_id: params[:id]).where(delivery_result: '配達済み').exists?
+    @results = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
+                                          .where(address: @baggage.address).where(block: @baggage.block)
+                                          .where(family_name: @baggage.family_name).where(first_name: @baggage.first_name)
   end
 
   def search
     @q = Baggage.ransack(params[:q])
     @baggages = @q.result
+    @results = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
   end
 
 

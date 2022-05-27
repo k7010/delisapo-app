@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :baggages
   has_many :deliveries
-  validates :staff_number, presence: true
+  validates :staff_number, presence: true, uniqueness: true
 end

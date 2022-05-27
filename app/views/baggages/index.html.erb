@@ -6,36 +6,18 @@
 
   <%# 一覧表示 %>
   <% @baggages.each do |baggage| %>
-    <%# 詳細ページへ遷移 %>
     <%= link_to baggage_path(baggage.id), method: :get do %>
-      <%= baggage.address %>
-      <%= baggage.block %>
-      <%= baggage.building %>
-      <%= baggage.family_name %>
-      <%= baggage.first_name %>
+      <%= render partial: "baggage", locals: { baggage: baggage } %>
     <% end %>
-      <% Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
-                .where(id: baggage.id).each do %>
-                <p style="display: inline">完了</p>
+      <% @results.where(id: baggage.id).each do %>
+        <p style="display: inline">完了</p>
       <% end %><br>
   <% end %><br>
     
   
 
 <h1>配達実績を調べる</h1>
-  <%= search_form_for Baggage.ransack(params[:q]), url: search_baggages_path do |f| %>
-    <%= f.label :address_cont, '住所' %>
-    <%= f.text_field :address_cont, placeholder: '住所' %><br>
-    <%= f.label :block_cont, '番地' %>
-    <%= f.text_field :block_cont, placeholder: '番地' %><br>
-    <%= f.label :family_name_cont, '苗字' %>
-    <%= f.text_field :family_name_cont, placeholder: '苗字' %><br>
-    <%= f.label :first_name_cont, '名前' %>
-    <%= f.text_field :first_name_cont, placeholder: '名前' %><br>
-    <%= f.submit '検索' %>
-  <% end %>
-  
-
+  <%= render 'search_form', url: baggages_path, q: @q %>
 
 <% else %>
 <%# ログアウト状態は以下を表示 %>
@@ -43,10 +25,3 @@
   <h1>新規登録・ログインして業務を開始して下さい</h1>
 <% end%>
 
-<% 
-=begin 
-%>
-
-<% 
-=end %
-%>
