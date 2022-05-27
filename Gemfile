@@ -63,3 +63,5 @@ gem 'active_hash'
 gem 'devise'
 
 gem 'ransack'
+
+gem 'rename'
