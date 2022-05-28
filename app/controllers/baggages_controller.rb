@@ -1,7 +1,11 @@
 class BaggagesController < ApplicationController
 
   def index
-    @baggages = Baggage.includes(:user)
+    if user_signed_in?
+      @baggages = Baggage.where(user_id: current_user.id).includes(:user)
+    else
+      @baggages = Baggage.includes(:user)
+    end
     @results = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
   end
 
@@ -31,7 +35,7 @@ class BaggagesController < ApplicationController
 
   def search
     @q = Baggage.ransack(params[:q])
-    @baggages = @q.result
+    @baggages = @q.result.order(id: "DESC")
     @results = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
   end
 

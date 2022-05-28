@@ -1,10 +1,11 @@
 <h1>トップページ</h1>
 <%= link_to "持出登録", new_baggage_path %><br>
 
-<% if user_signed_in? && current_user.id? %>
-  <h1>持出一覧</h1>
+<% if user_signed_in? %>
+<button type=button id="taking_display_btn">持出一覧</button>
 
   <%# 一覧表示 %>
+  <div class="taking-display" id="taking_display">
   <% @baggages.each do |baggage| %>
     <%= link_to baggage_path(baggage.id), method: :get do %>
       <%= render partial: "baggage", locals: { baggage: baggage } %>
@@ -12,16 +13,15 @@
       <% @results.where(id: baggage.id).each do %>
         <p style="display: inline">完了</p>
       <% end %><br>
-  <% end %><br>
+  <% end %>
+  </div><br>
     
   
-
 <h1>配達実績を調べる</h1>
-  <%= render 'search_form', url: baggages_path, q: @q %>
+<%= render 'search_form', url: baggages_path, q: @q %>
 
 <% else %>
 <%# ログアウト状態は以下を表示 %>
   <h1>今日も一日がんばりましょう</h1>
   <h1>新規登録・ログインして業務を開始して下さい</h1>
 <% end%>
-

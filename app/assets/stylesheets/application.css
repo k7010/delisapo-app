@@ -17,3 +17,11 @@
 * {
   box-sizing: border-box;
 }
+
+.taking-display{
+  display: none;
+}
+
+.search-form {
+  display: none;
+}

@@ -1,11 +1,19 @@
-  <p>過去の配達実績</p>
-<% @baggages.each do |baggage| %>
-  <%= render partial: "baggage", locals: { baggage: baggage } %>
-  <% @results.where(id: baggage.id).each do |i|%>
-    <%= i.created_at.strftime("%H:%M") %>
-    <%= i.delivery_result %>
-  <% end %><br>
-<% end %><br>
+<p>過去の配達実績</p>
+<% if @baggages.present? %>
+  <% @baggages.each do |baggage| %>
+    <%= render partial: "baggage", locals: { baggage: baggage } %>
+    <% if @results.where(id: baggage.id).present? %>
+      <% @results.where(id: baggage.id).each do |i|%>
+        <%= i.created_at.strftime("%H:%M") %>
+        <%= i.delivery_result %>
+      <% end %>
+    <% else %>
+      <p style="display: inline">配達前データ</p>
+    <% end %><br><br>
+  <% end %>
+<% else %>
+  <p>該当データなし</p>
+<% end %>
 
 
 <h1>配達実績を調べる</h1>
