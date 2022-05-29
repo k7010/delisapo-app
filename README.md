@@ -13,7 +13,7 @@
 # baggage
 | column      | Type        | options                         |
 | ----------- | ----------- | ------------------------------- |
-| address_id  | integer     | null, false                     |
+| address     | string      | null, false                     |
 | building    | string      |                                 |
 | block       | integer     | null, false                     |
 | family_name | string      | null, false                     |

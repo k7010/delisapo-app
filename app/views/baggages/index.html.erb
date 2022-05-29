@@ -2,19 +2,18 @@
 <%= link_to "持出登録", new_baggage_path %><br>
 
 <% if user_signed_in? %>
-<button type=button id="taking_display_btn">持出一覧</button>
+<h1>持出一覧</h1>
 
-  <%# 一覧表示 %>
-  <div class="taking-display" id="taking_display">
-  <% @baggages.each do |baggage| %>
-    <%= link_to baggage_path(baggage.id), method: :get do %>
-      <%= render partial: "baggage", locals: { baggage: baggage } %>
-    <% end %>
-      <% @results.where(id: baggage.id).each do %>
-        <p style="display: inline">完了</p>
-      <% end %><br>
+<%# 一覧表示 %>
+<% @baggages.each do |baggage| %>
+  <%= link_to baggage_path(baggage.id), method: :get do %>
+    <%= render partial: "baggage", locals: { baggage: baggage } %>
   <% end %>
-  </div><br>
+    <% @results.where(id: baggage.id).each do %>
+      <p style="display: inline">完了</p>
+    <% end %><br>
+<% end %>
+
     
   
 <h1>配達実績を調べる</h1>

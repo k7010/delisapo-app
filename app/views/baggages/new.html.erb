@@ -1,4 +1,5 @@
 <%= form_with model: @baggage, url:baggages_path, local: true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
   <%= f.text_area :address, placeholder:"住所" %><br>
   <%= f.text_area :block, placeholder:"例）1-2-3" %><br>
   <%= f.text_area :text, placeholder:"ビル名" %><br>
