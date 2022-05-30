@@ -5,14 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header class="header">
-      <div class="header__bar row">
-      <%= link_to 'topページ', "/" %>
+      <div class="header-logo">
+        <%= link_to 'topページ', "/" %>
+      </div>
+      <div class="header-menu">
         <% if user_signed_in? %>
           <div class="user-logout">
             <%= link_to current_user.staff_number, "#", class: "user-staff-number" %></li>
