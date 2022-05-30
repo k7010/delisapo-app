@@ -1,21 +1,14 @@
-<p>過去の配達実績</p>
+<h1>配達実績を調べる</h1>
+<%= render 'search_form', url: baggages_path, q: @q %>
+
+<p>過去の完了実績</p>
 <% if @baggages.present? %>
   <% @baggages.each do |baggage| %>
     <%= render partial: "baggage", locals: { baggage: baggage } %>
-    <% if @results.where(id: baggage.id).present? %>
-      <% @results.where(id: baggage.id).each do |i|%>
-        <%= i.created_at.strftime("%H:%M") %>
-        <%= i.delivery_result %>
-      <% end %>
-    <% else %>
-      <p style="display: inline">配達前データ</p>
-    <% end %><br><br>
+    <%= baggage.created_at.strftime("%H:%M") %>
+    <%= baggage.delivery_result %><br>
   <% end %>
-<% else %>
-  <p>該当データなし</p>
+<%else%>
+  <p>配達完了データなし</p>
 <% end %>
-
-
-<h1>配達実績を調べる</h1>
-<%= render 'search_form', url: baggages_path, q: @q %>
 

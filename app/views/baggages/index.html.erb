@@ -5,14 +5,16 @@
 <h1>持出一覧</h1>
 
 <%# 一覧表示 %>
-<% @baggages.each do |baggage| %>
-  <%= link_to baggage_path(baggage.id), method: :get do %>
-    <%= render partial: "baggage", locals: { baggage: baggage } %>
-  <% end %>
+<div class="taking-display-area">
+  <% @baggages.each do |baggage| %>
+    <%= link_to baggage_path(baggage.id), method: :get do %>
+      <%= render partial: "baggage", locals: { baggage: baggage } %>
+    <% end %>
     <% @results.where(id: baggage.id).each do %>
       <p style="display: inline">完了</p>
     <% end %><br>
-<% end %>
+  <% end %>
+</div>
 
     
   
