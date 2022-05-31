@@ -1,9 +1,31 @@
-<%= form_with model: @baggage, url:baggages_path, local: true do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
-  <%= f.text_area :address, placeholder:"住所" %><br>
-  <%= f.text_area :block, placeholder:"例）1-2-3" %><br>
-  <%= f.text_area :text, placeholder:"ビル名" %><br>
-  <%= f.text_area :family_name ,placeholder:"苗字" %><br>
-  <%= f.text_area :first_name, placeholder:"名前" %><br>
-  <%= f.submit "登録する" %>
-<% end %>
+<div class="body">
+  <div class="wrapper">
+    <h1>持出入力</h1>
+    <%= form_with model: @baggage, url:baggages_path, local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <div class="taking-field">
+        <%= f.label :address, "住所", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_area :address, placeholder:"東京都世田谷区三軒茶屋", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "番地", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_area :block, placeholder:"1-2-3", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "マンション・アパート名", class: "taking-label" %><span class="optional">任意</span>
+        <%= f.text_area :building, placeholder:"マンション名", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "苗字", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_area :family_name ,placeholder:"鈴木", class: "taking-form-area" %><br>
+      </div>
+      <div class="taking-field">
+        <%= f.label :address, "名前", class: "taking-label" %><span class="required">必須</span>
+        <%= f.text_area :first_name, placeholder:"一郎", class: "taking-form-area" %><br>
+      </div>
+      <div class="send-field">
+        <%= f.submit "登録", class: "send-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

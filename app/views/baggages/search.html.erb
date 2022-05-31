@@ -1,14 +1,25 @@
-<h1>配達実績を調べる</h1>
-<%= render 'search_form', url: baggages_path, q: @q %>
+<div class="body">
+  <div class="wrapper">
+    <h1>配達実績を調べる</h1>
+    <div class="search-area">
+      <%= render 'search_form', url: baggages_path, q: @q %>
+    </div>
 
-<p>過去の完了実績</p>
-<% if @baggages.present? %>
-  <% @baggages.each do |baggage| %>
-    <%= render partial: "baggage", locals: { baggage: baggage } %>
-    <%= baggage.created_at.strftime("%H:%M") %>
-    <%= baggage.delivery_result %><br>
-  <% end %>
-<%else%>
-  <p>配達完了データなし</p>
-<% end %>
-
+    <div class="result-title">
+      <h1>過去の完了実績</h1>
+    <div>
+    <div class="search-result-area">
+      <% if @baggages.present? %>
+        <% @baggages.each do |baggage| %>
+          <div class="search-result-name">
+            <%= render partial: "baggage", locals: { baggage: baggage } %>
+            <span class="result-time"><%= baggage.created_at.strftime("%H:%M") %></span>
+            <%= baggage.delivery_result %>
+          </div>
+        <% end %>
+      <%else%>
+        <p>配達完了データなし</p>
+      <% end %>
+    </div>
+  </div>
+</div>

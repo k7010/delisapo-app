@@ -18,19 +18,110 @@
   box-sizing: border-box;
 }
 
+.sign-exception {
+  color: #757575;
+  text-decoration: none;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   height: 70px;
   align-items: center;
+  margin: auto 20px;
 }
 
-.baggage-body {
+.header-title {
+  font-family: "Nico Moji";
+  text-decoration: none;
+  font-size: 40px;
+  color: #ffaa55;
+}
+
+.logout, .login, .sign-up {
+  color: #ffaa55;
+  border: 2px solid #ffaa55;
+  border-radius: 3px;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+/************    ログイン関連 ここから    *************/
+
+.sign-body {
+  display: flex;
+  justify-content: center;
   background-color: #f4f4f4;
 }
 
-.baggage-wrapper {
-  padding: 20px;
+.sign-wrapper {
+  padding: 20px 40px;
+}
+
+span.a {
+  color: #757575;
+}
+
+.sign-title {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-title h2 {
+  font-size: 30px;
+  color: #757575;
+}
+
+.field {
+  margin: 20px 0;
+}
+
+.sign-label-name {
+  color: #757575;
+}
+
+.sign-form-area {
+  outline: none;
+  border: 1px solid lightgray;
+  width: 300px;
+  height: 50px;
+  padding-left: 10px;
+}
+
+.sign-btn {
+  margin: 20px auto;
+  width: 150px;
+  height: 50px;
+  color: white;
+  background-color: #ffaa55;
+  border: 1px solid #ffaa55;
+  border-radius: 5px;
+  font-size: 23px
+}
+
+.sign-btn:hover {
+  color: #ffaa55;
+  background-color: white;
+}
+
+/************    トップページ ここから    *************/
+
+.body {
+  background-color: #f4f4f4;
+}
+
+.wrapper {
+  padding: 20px 40px;
 }
 
 .baggage-registration {
@@ -61,7 +152,8 @@
 
 h1 {
   margin-top: 30px;
-  font-size: 25px;
+  height: 50px;
+  font-size: 32px;
   color: white;
   background-color:#ffaa55;
   padding-left: 10px;
@@ -74,6 +166,13 @@ h1 {
   margin-bottom: 45px;
 }
 
+.taking-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  width: 100%;
+}
+
 .baggage-lists {
   display: flex;
   justify-content: space-between;
@@ -82,7 +181,6 @@ h1 {
 
 .baggage-lists p {
   padding: 7px;
-  font-size: 20px;
   background-color: #ffaa55;
   border-radius: 3px;
 }
@@ -92,23 +190,19 @@ h1 {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  font-size: 20px;
 }
 
-.taking-link {
-  text-decoration: none;
-  font-size: 20px;
-  color: black;
-}
 
 .search-area {
-  margin: 10px auto;
+  margin: 10px 0 60px 0;
 }
 
 .search-field {
   margin-bottom: 10px;
 }
 
-.search-field-area {
+.form-area {
   width: 100%;
   height: 50px;
   padding-left: 10px;
@@ -125,7 +219,7 @@ h1 {
   height: 50px;
   margin-top: 10px;
   background-color: white;
-  border: 1px solid #ffaa55;
+  border: 2px solid #ffaa55;
   border-radius: 25px;
   font-size: 23px;
 }
@@ -133,4 +227,131 @@ h1 {
 .submit-btn:hover {
   color: white;
   background-color: #ffaa55;
+}
+
+/************    トップページ ここまで     *************/
+/************    詳細ページ ここから     *************/
+
+.baggage-detail-name {
+  font-size: 25px;
+  line-height: 110%;
+  margin: 40px auto;
+}
+
+.delivery-selection {
+  margin: 30px auto;
+}
+
+.delivery-field {
+  display: flex;
+  justify-content: center;
+}
+
+.delivery-radio-btn {
+  width: 25px;
+  height: 50px;
+  margin: 0 5px 0 20px;
+}
+
+.delivery-label {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.send-field {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.send-btn {
+  margin: 20px auto;
+  width: 250px;
+  height: 50px;
+  color: white;
+  background-color: #ffaa55;
+  border: 2px solid #ffaa55;
+  border-radius: 25px;
+  font-size: 23px;
+}
+
+.send-btn:hover {
+  color: #ffaa55;
+  background-color: white;
+}
+
+.baggage-destroy {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding-top: 40px;
+  border-top: 1px solid lightgray;
+}
+
+.destroy-btn {
+  width: 250px;
+  height: 50px;
+  margin-top: 10px;
+  background-color: white;
+  border: 2px solid #ffaa55;
+  border-radius: 25px;
+  font-size: 23px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffaa55;
+}
+
+.destroy-btn:hover {
+  color: white;
+  background-color: #ffaa55;
+}
+
+/************    詳細ページ ここまで     *************/
+/************    検索結果ページ ここから     *************/
+
+.search-result-area {
+  height: 350px;
+  overflow: auto;
+  background-color: white;
+}
+
+.search-result-name {
+  line-height: 120%;
+  font-size: 23px;
+  margin: 20px auto;
+  padding: 0 0 20px 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.result-time {
+  padding: 0 20px;
+  font-size: 27px;
+}
+
+/************    検索結果ページ ここまで     *************/
+/************    持出登録 ここから     *************/
+.taking-field{
+  margin: 10px auto;
+}
+
+.taking-form-area {
+  width: 100%;
+  height: 50px;
+  padding: 10px 0 0 10px;
+  font-size: 20px;
+}
+
+.taking-label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.required {
+  background-color: red;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 13px;
 }

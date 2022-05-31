@@ -1,15 +1,15 @@
 <%= search_form_for Baggage.ransack(params[:q]), url: search_baggages_path do |f| %>
   <div class="search-field">
-    <%= f.text_field :address_cont, placeholder: '住所', class: "search-field-area" %>
+    <%= f.text_field :address_cont, placeholder: '住所', class: "form-area" %>
   </div>
   <div class="search-field">
-    <%= f.text_field :block_cont, placeholder: '番地', class: "search-field-area" %><br>
+    <%= f.text_field :block_cont, placeholder: '番地', class: "form-area" %><br>
   </div>
   <div class="search-field">
-    <%= f.text_field :family_name_cont, placeholder: '苗字', class: "search-field-area" %><br>
+    <%= f.text_field :family_name_cont, placeholder: '苗字', class: "form-area" %><br>
   </div>
   <div class="search-field">
-    <%= f.text_field :first_name_cont, placeholder: '名前', class: "search-field-area" %><br>
+    <%= f.text_field :first_name_cont, placeholder: '名前', class: "form-area" %><br>
   </div>
   <div class="submit-field">
     <%= f.submit '検 索', class: "submit-btn" %>

@@ -4,6 +4,7 @@
     <title>DelisapoApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,25 +14,29 @@
   <body>
     <header class="header">
       <div class="header-logo">
-        <%= link_to 'topページ', "/" %>
+        <%= link_to 'デリサポ', "/", class: "header-title"%>
       </div>
       <div class="header-menu">
         <% if user_signed_in? %>
           <div class="user-logout">
-            <%= link_to current_user.staff_number, "#", class: "user-staff-number" %></li>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+            <span class="a"><%= current_user.staff_number %></span>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
           </div>
         <% else %>
           <div class="user-sign">
-            <%= link_to "ログイン", new_user_session_path, class: "login" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
+            <%= link_to "Sign In", new_user_session_path, class: "login" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "sign-up" %>
           </div>
         <% end %>
       </div>
     </header>
-    <%= yield %>
+    <div>
+      <%= yield %>
+    </div>
     <footer>
-      <p>© 2021 Kawasaki</p>
+      <div class="footer">
+        <p>© 2021 Kawasaki</p>
+      </div>
     </footer>
   </body>
 </html>

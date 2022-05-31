@@ -1,20 +1,27 @@
-<h2>Log in</h2>
+<div class="sign-body">
+  <div class="sign-wrapper">
 
-<%= form_with model: @user, url: user_session_path, local: true do |f| %>
+    <div class="sign-title">
+      <h2>Sign In</h2>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+
+      <div class="field">
+        <%= f.label :email, 'Email Address', class: "sign-label-name" %><br />
+        <%= f.email_field :email, class: "sign-form-area" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: "sign-label-name" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "sign-form-area" %>
+      </div>
+
+      <div class="send-field">
+        <%= f.submit "Sign In", class: "sign-btn" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

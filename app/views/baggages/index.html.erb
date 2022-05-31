@@ -1,5 +1,6 @@
-<div class="baggage-body">
-  <div class="baggage-wrapper">
+<div class="body">
+  <div class="wrapper">
+
     <% if user_signed_in? %>
       <div class="baggage-registration">
         <%= link_to "持 出 登 録", new_baggage_path, class: "baggage-registration-btn" %>
@@ -9,30 +10,30 @@
       <%# 一覧表示 %>
       <div class="taking-display-area">
         <% @baggages.each do |baggage| %>
-          <div class="baggage-lists">
-            <div class="baggage-list">
-              <%= link_to baggage_path(baggage.id), method: :get, class: "taking-link" do %>
+          <%= link_to baggage_path(baggage.id), method: :get, class: "taking-link" do %>
+            <div class="baggage-lists">
+              <div class="baggage-list">
                 <%= render partial: "baggage", locals: { baggage: baggage } %>
-              <% end %>
+              </div>
+              <div class="baggage-list">
+                <% @results.where(id: baggage.id).each do %>
+                  <p>完了</p>
+                <% end %><br>
+              </div>
             </div>
-            <div class="baggage-list">
-              <% @results.where(id: baggage.id).each do %>
-                <p>完了</p>
-              <% end %><br>
-            </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
           
-      <h1>配達実績を検索</h1>
+      <h1>配達実績を調べる</h1>
       <div class="search-area">
         <%= render 'search_form', url: baggages_path, q: @q %>
       </div> 
 
     <% else %>
     <%# ログアウト状態は以下を表示 %>
-      <h1>今日も一日がんばりましょう</h1>
-      <h1>新規登録・ログインして業務を開始して下さい</h1>
+      <p>今日も一日がんばりましょう</p>
+      <p>新規登録・ログインして業務を開始して下さい</p>
     <% end%>
   </div>
 </div>
