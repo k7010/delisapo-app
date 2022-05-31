@@ -19,7 +19,7 @@
       <div class="header-menu">
         <% if user_signed_in? %>
           <div class="user-logout">
-            <span class="a"><%= current_user.staff_number %></span>
+            <span class="staff-number"><%= current_user.staff_number %></span>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
           </div>
         <% else %>
@@ -31,7 +31,9 @@
       </div>
     </header>
     <div>
+    <div>
       <%= yield %>
+      </div>
     </div>
     <footer>
       <div class="footer">

@@ -1,9 +1,5 @@
 <div class="body">
-  <div class="wrapper">
-    <h1>配達実績を調べる</h1>
-    <div class="search-area">
-      <%= render 'search_form', url: baggages_path, q: @q %>
-    </div>
+  <div class="search-wrapper">
 
     <div class="result-title">
       <h1>過去の完了実績</h1>
@@ -20,6 +16,10 @@
       <%else%>
         <p>配達完了データなし</p>
       <% end %>
+    </div>
+    <h1>配達実績を調べる</h1>
+    <div class="search-area">
+      <%= render 'search_form', url: baggages_path, q: @q %>
     </div>
   </div>
 </div>
