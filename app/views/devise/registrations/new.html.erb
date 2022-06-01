@@ -1,14 +1,14 @@
 <div class="body">
   <div class="wrapper">
   <div class="sign-title">
-    <h2>Sign up</h2>
+    <h2>Sign Up</h2>
   </div>
 
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :staff_number, class: "sign-label-name" %><br />
+        <%= f.label :staff_number, '社員番号', class: "sign-label-name" %><br />
         <%= f.text_field :staff_number, autocomplete: "staff_number", class: "sign-form-area" %>
       </div>
 

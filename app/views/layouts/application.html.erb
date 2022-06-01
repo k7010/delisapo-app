@@ -12,22 +12,24 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header-logo">
-        <%= link_to 'デリサポ', "/", class: "header-title"%>
-      </div>
-      <div class="header-menu">
-        <% if user_signed_in? %>
-          <div class="user-logout">
-            <span class="staff-number"><%= current_user.staff_number %></span>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
-          </div>
-        <% else %>
-          <div class="user-sign">
-            <%= link_to "Sign In", new_user_session_path, class: "login" %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "sign-up" %>
-          </div>
-        <% end %>
+    <header class="a">
+      <div class="header">
+        <div class="header-logo">
+          <%= link_to 'デリサポ', "/", class: "header-title"%>
+        </div>
+        <div class="header-menu">
+          <% if user_signed_in? %>
+            <div class="user-logout">
+              <span class="staff-number"><%= current_user.staff_number %></span>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout" %>
+            </div>
+          <% else %>
+            <div class="user-sign">
+              <%= link_to "Sign In", new_user_session_path, class: "login" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "sign-up" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </header>
     <div>

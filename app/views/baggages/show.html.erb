@@ -25,7 +25,9 @@
           <%= link_to "持出データ削除", baggage_path(@baggage.id), method: :delete, class: "destroy-btn" %>
         </div>
       <% else %>
-        <p>配達済み</p>
+        <div class="a">
+          <p>配達済み</p>
+        </div>
       <% end %>
     </div>
 
