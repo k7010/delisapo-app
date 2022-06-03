@@ -1,12 +1,16 @@
 ## アプリケーション名
-「デリ・サポ」
+デリサポ
 
 ## アプリケーション概要
 宅配ドライバーが、過去の配達実績時間を確認することができ、配達ルートの効率化と再配達件数の削減をサポートするアプリケーションです。
 
 ## 使用技術
-* Ruby
-* Ruby on Rails
+- Ruby ruby 2.6.5
+- Ruby on Rails Rails 6.0.5
+- RSpec
+- MySQL 5.6.51
+
+
 
 ## URL
 https://delisapo-app.herokuapp.com/
@@ -17,6 +21,11 @@ https://delisapo-app.herokuapp.com/
 
 ## 利用方法
 
+## 機能一覧
+- ユーザー管理機能
+  - ログイン機能
+- 持出登録機能
+- 
 
 # README
 
