@@ -50,6 +50,11 @@
   font-size: 21px;
 }
 
+.image-size {
+  width: 350px;
+  height: 350px;
+}
+
 footer {
   height: 50px;
   display: flex;
