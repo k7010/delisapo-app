@@ -9,23 +9,23 @@
     <div class="delivery-selection">
       <% if @result == false %>
         <% if current_user.id == @baggage.user.id %>
-        <%= form_with(model: [@baggage, @delivery], local: true) do |form| %>
-          <div class="delivery-field">
-            <%= form.radio_button :delivery_result, '配達済み', checked: true, class: "delivery-radio-btn" %>
-            <%= form.label :delivery_result, "完了", value: '配達済み', class: "delivery-label" %>
-            <%= form.radio_button :delivery_result, '不在', class: "delivery-radio-btn" %>
-            <%= form.label :delivery_result, "不在", value: '不在', class: "delivery-label" %>
-          </div>
-          <div class="send-field">
-            <%= form.submit "送信", class: "send-btn" %>
-          </div>
+          <%= form_with(model: [@baggage, @delivery], local: true) do |form| %>
+            <div class="delivery-field">
+              <%= form.radio_button :delivery_result, '配達済み', checked: true, class: "delivery-radio-btn" %>
+              <%= form.label :delivery_result, "完了", value: '配達済み', class: "delivery-label" %>
+              <%= form.radio_button :delivery_result, '不在', class: "delivery-radio-btn" %>
+              <%= form.label :delivery_result, "不在", value: '不在', class: "delivery-label" %>
+            </div>
+            <div class="send-field">
+              <%= form.submit "送信", class: "send-btn" %>
+            </div>
           <% end %>
-        <% end %>
         <div class="baggage-destroy">
           <%= link_to "持出データ削除", baggage_path(@baggage.id), method: :delete, class: "destroy-btn" %>
         </div>
+       <% end %>
       <% else %>
-        <div class="a">
+        <div class="result-text">
           <p>配達済み</p>
         </div>
       <% end %>

@@ -9,7 +9,7 @@
 
       <div class="field">
         <%= f.label :staff_number, '社員番号', class: "sign-label-name" %><br />
-        <%= f.text_field :staff_number, autocomplete: "staff_number", class: "sign-form-area" %>
+        <%= f.text_field :staff_number, placeholder:"半角数字", autocomplete: "staff_number", class: "sign-form-area" %>
       </div>
 
       <div class="field">
@@ -19,7 +19,7 @@
 
       <div class="field">
         <%= f.label :password, 'Password', class: "sign-label-name" %><br />
-        <%= f.password_field :password, placeholder:"6文字以上の半角英数字", class: "sign-form-area" %>
+        <%= f.password_field :password, placeholder:"半角英数字", class: "sign-form-area" %>
       </div>
 
       <div class="field">

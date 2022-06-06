@@ -17,6 +17,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Staff number can't be blank")
       end
+      it 'staff_numberが数値以外では登録できない' do
+        @user.staff_number = 'あいうえお'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Staff number is not a number")
+      end
       it 'staff_numberが重複したら登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
@@ -46,6 +51,12 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = '123456'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+      it 'passwordが英数混合でないと登録できない（全角含む）' do
+        @user.password = 'あ123456a'
+        @user.password_confirmation = 'あ123456a'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid. Include both letters and numbers')
       end
     end
   end

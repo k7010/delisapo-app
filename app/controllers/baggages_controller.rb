@@ -1,4 +1,5 @@
 class BaggagesController < ApplicationController
+  before_action :ensure_current_user, only: [:show]
 
   def index
     if user_signed_in?
@@ -26,7 +27,6 @@ class BaggagesController < ApplicationController
     @baggage = Baggage.find(params[:id])
     @delivery = Delivery.new
     @deliveries = @baggage.deliveries.includes(:user)
-    #配達済み荷物のidを取得
     @result = Delivery.where(baggage_id: params[:id]).where(delivery_result: '配達済み').exists?
   end
 
@@ -46,5 +46,12 @@ class BaggagesController < ApplicationController
 
   def baggage_params
     params.require(:baggage).permit(:address, :building, :block, :family_name, :first_name).merge(user_id: current_user.id)
+  end
+
+  def ensure_current_user
+    @baggage = Baggage.find(params[:id])
+    unless @baggage.user.id == current_user.id
+      redirect_to root_path
+    end
   end
 end

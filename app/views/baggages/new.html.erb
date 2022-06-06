@@ -23,9 +23,13 @@
         <%= f.label :address, "名前", class: "taking-label" %><span class="required">必須</span>
         <%= f.text_field :first_name, placeholder:"一郎", class: "taking-form-area" %><br>
       </div>
-      <div class="send-field">
-        <%= f.submit "登録", class: "send-btn" %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="send-field">
+          <%= f.submit "登録", class: "send-btn" %>
+        </div>
+      <% else %><br>
+        <p>ログインするとデータが送信できます</p>
+      <% end %>
     <% end %>
   </div>
 </div>
