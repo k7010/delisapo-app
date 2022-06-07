@@ -13,12 +13,15 @@
           <%= link_to baggage_path(baggage.id), method: :get, class: "taking-link" do %>
             <div class="baggage-lists">
               <div class="baggage-list">
-                <%= render partial: "baggage", locals: { baggage: baggage } %>
+                <%= render partial: "baggage", locals: { baggage: baggage }, class: "b" %>
               </div>
               <div class="baggage-list">
                 <% @results.where(id: baggage.id).each do %>
                   <p>完了</p>
                 <% end %><br>
+                <div class="baggage-time-specification">
+                <%= baggage.time_specification %>
+                </div>
               </div>
             </div>
           <% end %>

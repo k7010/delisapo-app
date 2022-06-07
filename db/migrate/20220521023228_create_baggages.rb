@@ -7,6 +7,7 @@ class CreateBaggages < ActiveRecord::Migration[6.0]
       t.string  :family_name,   null: false
       t.string  :first_name,    null: false
       t.references  :user,      null: false, foreign_key: true
+      t.string  :time_specification, null: false
       t.timestamps
     end
   end

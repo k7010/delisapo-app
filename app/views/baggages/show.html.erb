@@ -3,6 +3,9 @@
 
     <div class="baggage-detail-name">
       <%= render partial: "baggage", locals: { baggage: @baggage } %>
+      <div class="detail-time-specification">
+        <span class="detail-span">配達指定</span><%= @baggage.time_specification %>
+      </div>
     </div>
 
     <%#% 配達実績の入力 %>

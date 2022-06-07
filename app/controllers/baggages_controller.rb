@@ -45,7 +45,7 @@ class BaggagesController < ApplicationController
   private
 
   def baggage_params
-    params.require(:baggage).permit(:address, :building, :block, :family_name, :first_name).merge(user_id: current_user.id)
+    params.require(:baggage).permit(:address, :building, :block, :family_name, :first_name, :time_specification).merge(user_id: current_user.id)
   end
 
   def ensure_current_user

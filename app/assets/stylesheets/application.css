@@ -55,6 +55,11 @@
   font-size: 21px;
 }
 
+.logout:hover, .login:hover, .sign-up:hover{
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
+  color: white;
+}
+
 .image-size {
   width: 350px;
   height: 350px;
@@ -106,7 +111,7 @@ span.staff-number {
   width: 150px;
   height: 50px;
   color: white;
-  background-color: #ff8c00;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
   border: 1px solid #ff8c00;
   border-radius: 5px;
   font-size: 23px
@@ -114,7 +119,8 @@ span.staff-number {
 
 .sign-btn:hover {
   color: #ff8c00;
-  background-color: white;
+  background: white;
+  border: 2px solid #ff8c00;
 }
 
 /************    トップページ ここから    *************/
@@ -153,7 +159,7 @@ span.staff-number {
 
 .baggage-registration-btn:hover {
   color: white;
-  background-color: #ff8c00;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
 }
 
 h1 {
@@ -161,10 +167,11 @@ h1 {
   height: 50px;
   font-size: 32px;
   color: white;
-  background-color: #ff8c00;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.70) 100%);
   padding-left: 10px;
   display: flex;
   justify-content: center;
+  border-radius: 3px;
 }
 
 .taking-display-area {
@@ -185,6 +192,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid lightgray;
+  position: relative;
+  
 }
 
 .baggage-list p {
@@ -198,8 +207,19 @@ h1 {
   padding: 10px 10px 0 10px;
   margin-bottom: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   font-size: 20px;
+}
+
+.baggage-time-specification {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+.baggage-span {
+  margin-right: 5px;
+  font-size: 15px;
 }
 
 .not-logged {
@@ -221,6 +241,8 @@ h1 {
   height: 50px;
   padding-left: 10px;
   font-size: 20px;
+  outline: none;
+  border: 1px solid lightgray;
 }
 
 .submit-field {
@@ -232,7 +254,7 @@ h1 {
   width: 250px;
   height: 50px;
   margin-top: 10px;
-  background-color: white;
+  background: white;
   border: 2px solid #ff8c00;
   border-radius: 25px;
   font-size: 23px;
@@ -240,7 +262,7 @@ h1 {
 
 .submit-btn:hover {
   color: white;
-  background-color: #ff8c00;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
 }
 
 /************    トップページ ここまで     *************/
@@ -252,9 +274,20 @@ h1 {
   margin: 40px auto;
 }
 
+.detail-time-specification {
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.detail-span {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
 .delivery-selection {
   margin: 30px auto;
 }
+
 
 .delivery-field {
   display: flex;
@@ -272,6 +305,7 @@ h1 {
   margin-right: 10px;
 }
 
+
 .send-field {
   display: flex;
   justify-content: center;
@@ -283,7 +317,7 @@ h1 {
   width: 250px;
   height: 50px;
   color: white;
-  background-color: #ff8c00;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
   border: 2px solid #ff8c00;
   border-radius: 25px;
   font-size: 23px;
@@ -291,7 +325,7 @@ h1 {
 
 .send-btn:hover {
   color: #ff8c00;
-  background-color: white;
+  background: white;
 }
 
 .baggage-destroy {
@@ -306,7 +340,7 @@ h1 {
   width: 250px;
   height: 50px;
   margin-top: 10px;
-  background-color: white;
+  background: white;
   border: 2px solid #ff8c00;
   border-radius: 25px;
   font-size: 23px;
@@ -319,7 +353,7 @@ h1 {
 
 .destroy-btn:hover {
   color: white;
-  background-color: #ff8c00;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.60) 100%);
 }
 
 .header, .result-text {
@@ -366,11 +400,37 @@ h1 {
   height: 50px;
   padding-left: 10px;
   font-size: 20px;
+  outline: none;
+  border: 1px solid lightgray;
 }
 
 .taking-label {
   font-size: 20px;
-  margin-right: 10px;
+  
+}
+
+h2 {
+  font-size: 23px;
+  margin-top: 40px;
+}
+
+.time-specification {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.time-specification-area {
+  margin: 0 20px 0 10px;
+}
+
+.time-specification-field {
+  margin-bottom: 10px;
+}
+
+.time-specification-btn {
+  width: 20px;
+  height: 18px;
 }
 
 .required {
@@ -379,4 +439,9 @@ h1 {
   padding: 2px 4px;
   border-radius: 3px;
   font-size: 13px;
+  margin-left: 10px;
+}
+
+.optional {
+  margin-left: 10px;
 }
