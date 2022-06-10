@@ -23,7 +23,7 @@
   - 配達実績登録機能
 - 検索機能
 
-https://qiita.com/00__/items/e3e3e44394ef85e8fecf
+https://github.com/k7010/delisapo-app/issues/4
 
 ## テスト
 - RSpec
