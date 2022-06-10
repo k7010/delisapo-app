@@ -40,7 +40,7 @@
 .header-title {
   font-family: "Nico Moji";
   text-decoration: none;
-  font-size: 50px;
+  font-size: 55px;
   color: #ff8c00;
 }
 
@@ -75,6 +75,18 @@ footer {
 
 /************    ログイン関連 ここから    *************/
 
+.before-login {
+  margin: 30px 0 60px 0;
+}
+
+.before-login p {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
 span.staff-number {
   color: #757575;
   font-size: 23px;
@@ -100,10 +112,14 @@ span.staff-number {
 
 .sign-form-area {
   outline: none;
-  border: 1px solid lightgray;
+  border: none;
   width: 300px;
   height: 50px;
   padding-left: 10px;
+}
+
+.sign-form-area:focus {
+  border: 2px solid darkgray;
 }
 
 .sign-btn {
@@ -154,7 +170,7 @@ span.staff-number {
   text-decoration: none;
   font-size: 33px;
   font-weight: bold;
-  color: #6b4423;
+  color: #ff8c00;
 }
 
 .baggage-registration-btn:hover {
@@ -198,8 +214,8 @@ h1 {
 
 .baggage-list p {
   padding: 7px;
-  background-color: #ffaa55;
-  color: #6b4423;
+  background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.70) 100%);
+  color: white;
   border-radius: 3px;
 }
 
@@ -209,6 +225,10 @@ h1 {
   display: flex;
   align-items: flex-start;
   font-size: 20px;
+}
+
+.baggage-lists:hover {
+  opacity: 0.5;
 }
 
 .baggage-time-specification {
@@ -245,6 +265,10 @@ h1 {
   border: 1px solid lightgray;
 }
 
+.form-area:focus {
+  border: 2px solid darkgray;
+}
+
 .submit-field {
   display: flex;
   justify-content: center;
@@ -258,6 +282,7 @@ h1 {
   border: 2px solid #ff8c00;
   border-radius: 25px;
   font-size: 23px;
+  color: #ff8c00;
 }
 
 .submit-btn:hover {
@@ -389,6 +414,11 @@ h1 {
   font-size: 27px;
 }
 
+::placeholder {
+  color: darkgray;
+  font-weight: lighter;
+}
+
 /************    検索結果ページ ここまで     *************/
 /************    持出登録 ここから     *************/
 .taking-field{
@@ -402,6 +432,10 @@ h1 {
   font-size: 20px;
   outline: none;
   border: 1px solid lightgray;
+}
+
+.taking-form-area:focus {
+  border: 2px solid darkgray;
 }
 
 .taking-label {
@@ -431,6 +465,7 @@ h2 {
 .time-specification-btn {
   width: 20px;
   height: 18px;
+  
 }
 
 .required {

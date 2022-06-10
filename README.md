@@ -23,6 +23,8 @@
   - 配達実績登録機能
 - 検索機能
 
+https://qiita.com/00__/items/e3e3e44394ef85e8fecf
+
 ## テスト
 - RSpec
   - 単体テスト
