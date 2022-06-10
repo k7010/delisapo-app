@@ -23,7 +23,7 @@
   - 配達実績登録機能
 - 検索機能
 
-![Uploading login-baggage.gif…]()
+![login-baggage](https://user-images.githubusercontent.com/103634772/173057236-9aee21f4-7ac4-44a7-91ee-60e99872aa9c.gif)
 
 ## テスト
 - RSpec
