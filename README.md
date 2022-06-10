@@ -14,6 +14,8 @@
 - ユーザー管理
   - 新規登録機能
   - ログイン機能
+  ![Jun-10-2022 20-56-59](https://user-images.githubusercontent.com/103634772/173060715-e7ba9eb7-cd1e-4ce0-bba7-c57d73731488.gif)
+
 - 荷物管理
   - 持出登録機能
   - 持出一覧機能
