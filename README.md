@@ -23,7 +23,7 @@
   - 配達実績登録機能
 - 検索機能
 
-![sample](https://github.com/k7010/delisapo-app/issues/4 "title")
+![Uploading login-baggage.gif…]()
 
 ## テスト
 - RSpec
