@@ -9,10 +9,10 @@
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
-  "devDependencies": {
+  "devDependencies": { 
     "webpack-dev-server": "^4.9.0"
   },
   "engines" : {
-    "node" : "14.19.2" 
+    "node" : "14.19.2"
   }
 }
