@@ -36,6 +36,11 @@ RSpec.describe Baggage, type: :model do
         @baggage.valid?
         expect(@baggage.errors.full_messages).to include("First name can't be blank")
       end
+      it 'time_specificationが空欄だと登録できない' do
+        @baggage.time_specification = ''
+        @baggage.valid?
+        expect(@baggage.errors.full_messages).to include("Time specification can't be blank")
+      end
     end
   end
 end

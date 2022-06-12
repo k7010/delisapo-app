@@ -7,6 +7,7 @@ class Baggage < ApplicationRecord
     validates :block
     validates :family_name
     validates :first_name
+    validates :time_specification
   end
 
 end
