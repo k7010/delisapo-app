@@ -63,7 +63,7 @@ https://delisapo-app.herokuapp.com/
 ログイン後に登録された配達完了実績は、検索結果に反映されます。
 
 ## テスト用アカウント
-メールアドレス：test@mail
+メールアドレス：test@mail  
 パスワード：pass1234
 
 
