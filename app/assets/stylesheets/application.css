@@ -217,13 +217,13 @@ h1 {
   background: linear-gradient( rgba(255,140,0,1) 0%, rgba(255,140,0,0.70) 100%);
   color: white;
   border-radius: 3px;
+  margin-top: 0;
 }
 
 .baggage-list {
   padding: 10px 10px 0 10px;
   margin-bottom: 10px;
-  display: flex;
-  align-items: flex-start;
+  
   font-size: 20px;
 }
 
