@@ -27,7 +27,10 @@
 ![baggage](https://user-images.githubusercontent.com/103634772/173171129-6e8d770f-3a18-4d6c-a53d-2862541e105e.gif)
 
 - 荷物管理
-  - 持出一覧機能
+  - 持出一覧機能  
+  積込んだ荷物の情報が表示されます。  
+  荷物情報ごとに詳細ページへ遷移できます。  
+  配達が完了した荷物情報には「完了」の表示がされます。  
 
 ![index](https://user-images.githubusercontent.com/103634772/173171130-977427b9-f19f-4f9e-9cf5-3d1b55895f21.gif)
 
