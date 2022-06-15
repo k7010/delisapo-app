@@ -41,14 +41,16 @@
 ![show-delete](https://user-images.githubusercontent.com/103634772/173171133-4b5fe4e5-a542-48c6-a7af-1aceb93f12fc.gif)  
 
 - 配達管理
-  - 配達実績登録機能
-
-  配達が完了した荷物情報には「完了」の表示がされます。  
+  - 配達実績登録機能  
+  詳細ページにて配達の「完了」または「不在」が入力できます。  
+  持出一覧にて、配達が完了した荷物情報には「完了」の表示がされます。  
 
 ![delivery](https://user-images.githubusercontent.com/103634772/173171138-dfc240f1-5ee9-42ef-a0b5-bff2d9a01423.gif)
 
 - 検索機能
-  - 配達実績参照機能
+  - 配達実績参照機能  
+  過去の配達完了実績を検索できます。  
+  完了時間を基に、効率的な配達ルートを組むことが出来ます。
 
 ![search](https://user-images.githubusercontent.com/103634772/173171149-08a3c54f-c18e-4c97-bd73-4aec24a26f59.gif)
 
