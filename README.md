@@ -17,16 +17,15 @@
 
 ![sign-up](https://user-images.githubusercontent.com/103634772/173171108-2edd45b3-7a37-4585-a5c6-ff74a097ece8.gif)
 ![signin](https://user-images.githubusercontent.com/103634772/173171115-bb986367-9c8a-4aa6-b62d-3668b8829a82.gif)
-  
+<br>
+<br>
 
 - 荷物管理
   - 持出登録機能  
   積込む荷物の情報を登録できます。  
   住所・氏名・配達指定時間を入力します。
 
-![baggage](https://user-images.githubusercontent.com/103634772/173171129-6e8d770f-3a18-4d6c-a53d-2862541e105e.gif)  
-  
-  
+![baggage](https://user-images.githubusercontent.com/103634772/173171129-6e8d770f-3a18-4d6c-a53d-2862541e105e.gif)
 
 - 荷物管理
   - 持出一覧機能  
