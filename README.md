@@ -17,7 +17,7 @@
 
 ![sign-up](https://user-images.githubusercontent.com/103634772/173171108-2edd45b3-7a37-4585-a5c6-ff74a097ece8.gif)
 ![signin](https://user-images.githubusercontent.com/103634772/173171115-bb986367-9c8a-4aa6-b62d-3668b8829a82.gif)  
-***
+  
 
 - 荷物管理
   - 持出登録機能  
