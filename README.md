@@ -16,7 +16,7 @@
   - ログイン機能
 
 ![sign-up](https://user-images.githubusercontent.com/103634772/173171108-2edd45b3-7a37-4585-a5c6-ff74a097ece8.gif)
-![signin](https://user-images.githubusercontent.com/103634772/173171115-bb986367-9c8a-4aa6-b62d-3668b8829a82.gif)
+![signin](https://user-images.githubusercontent.com/103634772/173171115-bb986367-9c8a-4aa6-b62d-3668b8829a82.gif)  
 
 
 - 荷物管理
@@ -24,24 +24,26 @@
   積込む荷物の情報を登録できます。  
   住所・氏名・配達指定時間を入力します。
 
-![baggage](https://user-images.githubusercontent.com/103634772/173171129-6e8d770f-3a18-4d6c-a53d-2862541e105e.gif)
+![baggage](https://user-images.githubusercontent.com/103634772/173171129-6e8d770f-3a18-4d6c-a53d-2862541e105e.gif)  
 
 - 荷物管理
   - 持出一覧機能  
   積込んだ荷物の情報が表示されます。  
   荷物情報ごとに詳細ページへ遷移できます。  
-  配達が完了した荷物情報には「完了」の表示がされます。  
 
-![index](https://user-images.githubusercontent.com/103634772/173171130-977427b9-f19f-4f9e-9cf5-3d1b55895f21.gif)
+![index](https://user-images.githubusercontent.com/103634772/173171130-977427b9-f19f-4f9e-9cf5-3d1b55895f21.gif)  
 
 - 荷物管理
   - 詳細機能
-  - 削除機能
+  - 削除機能  
+  各荷物の詳細ページで、配達実績の登録と積込んだ荷物情報を削除できます。
 
-![show-delete](https://user-images.githubusercontent.com/103634772/173171133-4b5fe4e5-a542-48c6-a7af-1aceb93f12fc.gif)
+![show-delete](https://user-images.githubusercontent.com/103634772/173171133-4b5fe4e5-a542-48c6-a7af-1aceb93f12fc.gif)  
 
 - 配達管理
   - 配達実績登録機能
+
+  配達が完了した荷物情報には「完了」の表示がされます。  
 
 ![delivery](https://user-images.githubusercontent.com/103634772/173171138-dfc240f1-5ee9-42ef-a0b5-bff2d9a01423.gif)
 
