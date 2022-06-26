@@ -3,9 +3,9 @@ class BaggagesController < ApplicationController
 
   def index
     if user_signed_in?
-      @baggages = Baggage.where(user_id: current_user.id).includes(:user)
-    else
-      @baggages = Baggage.includes(:user)
+      @baggages = Baggage.where(user_id: current_user.id).where("created_at >= ?", Date.today).includes(:user)
+    #else
+      #@baggages = Baggage.includes(:user)
     end
     @results = Baggage.joins(:deliveries).select("baggages.*, deliveries.*").where("delivery_result = '配達済み'")
   end
